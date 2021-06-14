@@ -58,7 +58,7 @@ function game() {
     if (playerScore > computerScore) {
         console.log("Congratulations you win!");
     }else if (playerScore < computerScore) {
-        console.log("I'm sorry but you lost.");
+        console.log("I'm sorry but you lost this time.");
     }else {
         console.log("Overall tie!");
     }
