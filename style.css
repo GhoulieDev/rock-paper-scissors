@@ -1,0 +1,47 @@
+html {
+    background-color: black;
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    font-family: monospace;
+    font-weight: 1000;
+    text-align: center;
+    padding: 30px 0;
+}
+
+#score {
+    height: 10vh;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-family: monospace;
+    text-align: center;
+    
+}
+
+#selections {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 20px 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+}
+
+#results {
+    height: 50vh;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    
+}
+
+#results p {
+    padding: 10px;
+}
