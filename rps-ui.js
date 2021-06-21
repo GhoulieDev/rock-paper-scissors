@@ -1,12 +1,16 @@
 //create a nodelist of all button nodes, for each button add an event listener for click, and run the playRound function
 const selections = document.querySelectorAll("button");
 selections.forEach(selection => {
-    selection.addEventListener("click", playRound);
+    selection.addEventListener("click", playGame);
 });
 
+const score = document.querySelector("#score");
+const playerCurrentScore = document.querySelector(".player");
+const computerCurrentScore = document.querySelector(".computer");
+const roundResultBox = document.querySelector("#results");
 
+//generates a random number 1-3
 function computerPlay() {
-    //generates a random number 1-3
     let computerChoice = Math.floor(Math.random()*3)+1;
     if (computerChoice == 1) {
         computerChoice = "rock";
@@ -20,11 +24,11 @@ function computerPlay() {
 
 //the param is an event object passed into the callback function when called by the eventlistener, we grab the ID so we know which one was pressed
 function playRound(playerChoice) {
-    let playerSelection = (playerChoice.target.id);
+    let playerSelection = playerChoice.target.id;
+    console.log(playerChoice);
     let computerSelection = computerPlay();
     
-    //create reference to parent, create a <p> and assign it some text and then append it to parent
-    const roundResultBox = document.querySelector("#results");
+    
     const paraRoundSelections = document.createElement("p");
     paraRoundSelections.textContent = `You chose ${playerSelection}, computer chose ${computerSelection}`;
     
@@ -56,10 +60,64 @@ function playRound(playerChoice) {
     roundResultBox.prepend(paraRoundSelections);
     
     return result; 
-
-    
 }
+  
+let playerScore = 0;
+let computerScore = 0;
+let gameResult;
 
-//TO DO: add scoring and 5 round loop, add some hover/animations to the buttons, maybe add changing images based on selections
+function playGame(playerChoice) {
+    roundResult = playRound(playerChoice);
+
+    if (roundResult == "win") {
+        playerScore += 1;
+            
+    }else if (roundResult == "lose") {
+        computerScore += 1;
+    } 
+    
+    updateScore(playerScore, computerScore);
+
+
+
+    if (playerScore == 5 || computerScore == 5) {
+        if (playerScore == 5) {
+            gameResult = document.createElement("p");
+            gameResult.textContent = "GAME OVER! YOU WIN!";
+            gameResult.style.color = "green";
+            score.appendChild(gameResult);
+        }else {
+            gameResult = document.createElement("p");
+            gameResult.textContent = "GAME OVER! YOU LOSE!";
+            gameResult.style.color = "red";
+            score.appendChild(gameResult);
+        }
+
+        
+        resetGame();
+        
+    }
+}
+    
+function updateScore(playerScore, computerScore) {
+    playerCurrentScore.textContent = playerScore;
+    computerCurrentScore.textContent = computerScore;
+}
+  
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    
+   
+    
+}     
+     
+    
+//remove round results + game over display
+
+
+
+
+
 
 

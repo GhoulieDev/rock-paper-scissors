@@ -13,14 +13,17 @@ h1 {
 }
 
 #score {
-    height: 10vh;
+    height: 20vh;
     text-align: center;
     color: white;
     font-size: 40px;
     font-family: monospace;
     text-align: center;
     
+    
 }
+
+
 
 #selections {
     display: flex;
