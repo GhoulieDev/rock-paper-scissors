@@ -7,3 +7,6 @@ Topics Practiced:
 - For loop
 
 DOM practiced:
+- Event listeners
+- Callback
+- Creating/removing elements in the DOM
