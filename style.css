@@ -19,11 +19,7 @@ h1 {
     font-size: 40px;
     font-family: monospace;
     text-align: center;
-    
-    
 }
-
-
 
 #selections {
     display: flex;
@@ -34,7 +30,10 @@ button {
     margin: 20px 10px;
     padding: 10px 20px;
     border-radius: 10px;
+}
 
+button:hover {
+    box-shadow: 0px 0px 12px white;
 }
 
 #results {
@@ -42,7 +41,6 @@ button {
     text-align: center;
     font-size: 20px;
     color: white;
-    
 }
 
 #results p {
